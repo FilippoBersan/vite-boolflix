@@ -1,5 +1,15 @@
-<script></script>
+<script>
+import FilmList from './components/FilmList.vue';
 
-<template></template>
+export default {
+  components: {
+    FilmList,
+  },
+};
+</script>
+
+<template>
+  <FilmList></FilmList>
+</template>
 
 <style scoped></style>
