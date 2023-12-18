@@ -40,15 +40,28 @@ export default {
       <div v-for="films in store.film">
         <h4>{{ films.title }}</h4>
         <h5>{{ films.original_title }}</h5>
-        <p>{{ films.original_language }}</p>
+        <p v-if="films.original_language === 'it'">
+          <img src="./assets/ita-flag.png" alt="" />
+        </p>
+
+        <p v-else-if="films.original_language === 'en'">
+          <img src="./assets/eng-flag.png" alt="" />
+        </p>
+
+        <p v-else>{{ films.original_language }}</p>
+
         <p>{{ films.vote_average }}</p>
       </div>
     </li>
   </ul>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 li {
   list-style-type: none;
+  img {
+    height: 20px;
+    width: 20px;
+  }
 }
 </style>
